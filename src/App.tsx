@@ -1,5 +1,10 @@
 import { useState } from "react";
+import Form from "./components/Form";
 
-const App = () => <div className="text-black">Hi</div>;
+const App = () => (
+  <div>
+    <Form />
+  </div>
+);
 
 export default App;
