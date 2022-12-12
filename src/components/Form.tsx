@@ -5,17 +5,14 @@ const Form = () => {
   const [kennzeichen, setKennzeichen] = useState("");
   const [email, setEmail] = useState("");
 
-  const handleClick = () => {
-    console.log("Click");
-  };
-
   const handleSubmit = (event: any) => {
     event.preventDefault();
+    console.log("Click");
 
-    //TODO: Create Backend
-
-    fetch("https://eo72zb9tcvioghl.m.pipedream.net", {
+    fetch("http://localhost:3001/createCustomer", {
       method: "POST",
+      mode: "cors",
+
       headers: {
         "Content-Type": "application/json",
       },
