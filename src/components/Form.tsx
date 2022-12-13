@@ -4,6 +4,7 @@ const Form = () => {
   const [name, setName] = useState("");
   const [kennzeichen, setKennzeichen] = useState("");
   const [email, setEmail] = useState("");
+  const [status, setStatus] = useState("Eingeliefert");
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
@@ -16,7 +17,7 @@ const Form = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name, kennzeichen, email }),
+      body: JSON.stringify({ name, kennzeichen, email, status }),
     });
   };
 
@@ -55,9 +56,21 @@ const Form = () => {
           onChange={(event) => setEmail(event.target.value)}
         />
       </form>
+      <form className="flex absoulte -mt-10 ml-[400px]">
+        <label className="mr-5">Status</label>
+        <select onChange={(event) => setStatus(event.target.value)}>
+          <option selected value="Eingeliefert">
+            Eingeliefert
+          </option>
+          <option value="Gecheckt">Gecheckt</option>
+          <option value="Teile bestellt">Teile bestellt</option>
+          <option value="Teile verbaut">Teile verbaut</option>
+          <option value="Fertig zur Abholung">Fertig zur Abholung</option>
+        </select>
+      </form>
       <button
         onClick={handleSubmit}
-        className="ml-9 mt-4 bg-black"
+        className="ml-9 mt-10 bg-black"
         type="submit"
       >
         Senden
