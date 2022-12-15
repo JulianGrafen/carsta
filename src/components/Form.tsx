@@ -6,11 +6,13 @@ const Form = () => {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState("Eingeliefert");
 
+  ///TODO: Update function for updating the car status
+
   const handleSubmit = (event: any) => {
     event.preventDefault();
     console.log("Click");
 
-    fetch("http://localhost:3001/createCustomer", {
+    fetch("http://localhost:3002/createCustomer", {
       method: "POST",
       mode: "cors",
 
