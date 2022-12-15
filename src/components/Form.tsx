@@ -12,6 +12,16 @@ const Form = () => {
     event.preventDefault();
     console.log("Click");
 
+    fetch("http://localhost:3002/customermail", {
+      method: "POST",
+      mode: "cors",
+
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, kennzeichen, email, status }),
+    });
+
     fetch("http://localhost:3002/createCustomer", {
       method: "POST",
       mode: "cors",
