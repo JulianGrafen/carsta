@@ -1,10 +1,11 @@
 import { useState } from "react";
 
-const Form = () => {
+export function CreateCustomer() {
   const [name, setName] = useState("");
   const [kennzeichen, setKennzeichen] = useState("");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState("Eingeliefert");
+  const [toggle, setToggle] = useState(0);
 
   ///TODO: Update function for updating the car status
 
@@ -89,6 +90,4 @@ const Form = () => {
       </button>
     </div>
   );
-};
-
-export default Form;
+}
