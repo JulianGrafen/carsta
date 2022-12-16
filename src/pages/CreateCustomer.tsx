@@ -10,6 +10,7 @@ export function CreateCustomer() {
   ///TODO: Update function for updating the car status
 
   const handleSubmit = (event: any) => {
+    window.alert("Kunde wurde gespeichert");
     event.preventDefault();
     console.log("Click");
 

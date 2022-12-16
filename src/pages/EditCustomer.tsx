@@ -18,7 +18,17 @@ export function EditCustomer(item: any) {
       .then((json) => setData(json));
   }, []);
 
+  const handleDelete = (itemId: number, itemName: string) => {
+    window.alert(`Kunde ${itemName} wurde gelöscht.`);
+    window.location.reload();
+    // Send the request to delete the item with the specified id
+    fetch(`http://localhost:3002/createcustomer/${itemId}`, {
+      method: "DELETE",
+    });
+  };
   const handleSubmit = (event: any, updatedData: DataItem[]) => {
+    window.alert(`Der Status des Kundenfahzeugs wurde geändert.`);
+    window.location.reload();
     event.preventDefault();
     console.log("Click");
 
@@ -61,6 +71,7 @@ export function EditCustomer(item: any) {
             <th className="px-4 py-2">Kennzeichen</th>
             <th className="px-4 py-2">Status</th>
             <th className="px-4 py-2">ID</th>
+            <th className="px-4 py-2"></th>
           </tr>
         </thead>
         <tbody>
@@ -85,6 +96,14 @@ export function EditCustomer(item: any) {
                 </select>
               </td>
               <td className="border px-4 py-2">{item.id}</td>
+              <td className="border px-4 py-2">
+                <button
+                  className="bg-red-500 text-white rounded-lg p-2"
+                  onClick={() => handleDelete(item.id, item.name)}
+                >
+                  Löschen
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
