@@ -33,45 +33,44 @@ export function CreateCustomer() {
       body: JSON.stringify({ name, kennzeichen, email, status }),
     });
   };
-
   return (
-    <div className="">
-      <form className="mt-10 ml-10" onSubmit={handleSubmit}>
-        <label className="mr-5" htmlFor="name">
+    <div className="mt-10 ml-10">
+      <form className="flex flex-col" onSubmit={handleSubmit}>
+        <label className="mb-2 font-semibold" htmlFor="name">
           Name:
         </label>
         <input
+          className="border rounded-lg p-2"
           type="text"
           id="name"
           value={name}
           onChange={(event) => setName(event.target.value)}
         />
-      </form>
-      <form className="mt-10 ml-10">
-        <label className="mr-5" htmlFor="Kennzeichen">
+        <label className="mb-2 font-semibold" htmlFor="Kennzeichen">
           Kennzeichen:
         </label>
         <input
+          className="border rounded-lg p-2"
           type="text"
           id="kennzeichen"
           value={kennzeichen}
           onChange={(event) => setKennzeichen(event.target.value)}
         />
-      </form>
-      <form className="mt-10 ml-10">
-        <label className="mr-5" htmlFor="email">
+        <label className="mb-2 font-semibold" htmlFor="email">
           E-Mail:
         </label>
         <input
+          className="border rounded-lg p-2"
           type="text"
           id="email"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
         />
-      </form>
-      <form className="flex absoulte -mt-10 ml-[400px]">
-        <label className="mr-5">Status</label>
-        <select onChange={(event) => setStatus(event.target.value)}>
+        <label className="mb-2 font-semibold">Status</label>
+        <select
+          className="border rounded-lg p-2"
+          onChange={(event) => setStatus(event.target.value)}
+        >
           <option selected value="Eingeliefert">
             Eingeliefert
           </option>
@@ -80,14 +79,13 @@ export function CreateCustomer() {
           <option value="Teile verbaut">Teile verbaut</option>
           <option value="Fertig zur Abholung">Fertig zur Abholung</option>
         </select>
+        <button
+          className="mt-4 bg-black text-white rounded-lg p-2"
+          type="submit"
+        >
+          Senden
+        </button>
       </form>
-      <button
-        onClick={handleSubmit}
-        className="ml-9 mt-10 bg-black"
-        type="submit"
-      >
-        Senden
-      </button>
     </div>
   );
 }
