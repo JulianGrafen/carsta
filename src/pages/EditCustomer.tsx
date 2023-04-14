@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Navbar } from "../components/navbar";
 
 interface DataItem {
   name: string;
@@ -43,7 +44,7 @@ export function EditCustomer(item: any) {
       body: JSON.stringify(updatedData),
     });
 
-    // Send the updated data to the API
+    // Send the updated data via API
     updatedData.forEach((item: DataItem) => {
       const { name, kennzeichen, email, status } = item;
       fetch("http://localhost:3002/customermail", {
@@ -63,8 +64,9 @@ export function EditCustomer(item: any) {
     setData([...data]);
   };
   return (
-    <div>
-      <table className="ml-10 table-auto w-full">
+    <div className="absolute -translate-y-[310px]">
+      <Navbar />
+      <table className="ml-10  table-auto w-full">
         <thead>
           <tr className="bg-gray-200 text-xs font-semibold text-gray-700 uppercase tracking-wide">
             <th className="px-4 py-2">Name</th>
