@@ -13,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/createcustomer" element={<CreateCustomer />} />
           <Route path="/EditCustomer" element={<EditCustomer />} />
+          <Route path="*" element={<CreateCustomer />} />
         </Routes>
       </Container>
     </>
