@@ -50,7 +50,6 @@ export function EditCustomer(item: any) {
       fetch("http://localhost:3002/customermail", {
         method: "POST",
         mode: "cors",
-
         headers: {
           "Content-Type": "application/json",
         },

@@ -26,7 +26,6 @@ export function CreateCustomer() {
     console.log("Click");
 
     if (toggleError === false) {
-      window.alert("Kunde wurde gespeichert");
       fetch("http://localhost:3002/customermail", {
         method: "POST",
         mode: "cors",
@@ -36,7 +35,7 @@ export function CreateCustomer() {
         },
         body: JSON.stringify({ name, kennzeichen, email, status }),
       });
-
+      window.alert("Kunde wurde gespeichert");
       fetch("http://localhost:3002/createCustomer", {
         method: "POST",
         mode: "cors",
